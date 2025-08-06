@@ -29,7 +29,9 @@ const NavItem: FC<NavItemProps> = ({
       to={to}
       onClick={() => handleNavClick(to)}
       className={`rounded-3xl ${
-        activeButton === to ? "active custom-nav !text-primary-content" : ""
+        activeButton === to
+          ? "active bg-primary !text-primary-content"
+          : "!text-neutral-content"
       }`}
     >
       {label}
@@ -79,6 +81,7 @@ export default function Nav() {
               />
             </svg>
           </div>
+
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow"
