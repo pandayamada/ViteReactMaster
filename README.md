@@ -1,4 +1,48 @@
-# React + TypeScript + Vite
+# Vite + React + TypeScript Starter (with AuthGuard & Routing)
+
+A minimal yet powerful starter project built with **Vite**, **React 19**, and **TypeScript**, designed to demonstrate:
+
+- 🔐 Basic authentication with local storage
+- 🛡️ Route protection (AuthGuard / UnAuthGuard)
+- ⚛️ Component-based structure with modern styling (Tailwind + DaisyUI)
+- 🧠 Type-aware ESLint configuration for clean, scalable code
+
+## ▶️ Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run ESLint
+npm run lint
+```
+
+## 🚀 Tech Stack
+
+| Feature      | Stack                         |
+|--------------|-------------------------------|
+| Build Tool   | [Vite](https://vitejs.dev/)   |
+| Framework    | [React 19](https://react.dev/) |
+| Language     | [TypeScript](https://www.typescriptlang.org/) |
+| Styling      | TailwindCSS + DaisyUI         |
+| Routing      | React Router v7               |
+| Auth Storage | Local Storage               |
+| Linting      | ESLint + Type-aware Rules     |
+
+---
+
+
+<!--
+## 🧪 Config
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -6,8 +50,9 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-->
 
-## Expanding the ESLint configuration
+## 🧪 Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
