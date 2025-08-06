@@ -2,16 +2,17 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import AuthGuard from "./layout/AuthenGard";
 import UnAuthen from "./layout/UnAuthGuard";
 import { getSessionsStorage } from "./services/storage.js";
-// import { permissionAction } from "../core/model/permissions.config";
+import { permissionAction } from "./core/model/permissions.config";
 
 import Login from "./views/auth/Login";
-// import ResetPassword from "../views/auth/ResetPassword";
+import Home from "./views/module/Home";
+import Contract from "./views/module/Contract.js";
 
 const routes = createBrowserRouter([
   {
     path: "*",
     element: getSessionsStorage("token") ? (
-      <Navigate to="/dashboard" />
+      <Navigate to="/home" />
     ) : (
       <Navigate to="/auth/login" />
     ),
@@ -21,11 +22,20 @@ const routes = createBrowserRouter([
     element: <UnAuthen component={<Login />} />,
   },
   {
-    path: "/dashboard",
+    path: "/home",
     element: (
       <AuthGuard
-      // permissionAccess={permissionAction.dashboardView}
-      // component={<DashboardPage />}
+        permissionAccess={permissionAction.Home}
+        component={<Home />}
+      />
+    ),
+  },
+  {
+    path: "/contract",
+    element: (
+      <AuthGuard
+        permissionAccess={permissionAction.Contract}
+        component={<Contract />}
       />
     ),
   },
