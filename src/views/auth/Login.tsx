@@ -3,7 +3,7 @@ import { useEffect, useState, type FormEvent } from "react";
 // icon & image
 
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { setSessionsStorage } from "../../services/storage";
+import { setLocalStorage } from "../../services/storage";
 import type { UserInfo } from "../../core/model/user.config";
 
 export default function LoginNew() {
@@ -30,8 +30,8 @@ export default function LoginNew() {
         first_name: "User",
         last_name: user.username,
       };
-      setSessionsStorage("token", "dummy_token"); // Replace with actual token from login response
-      setSessionsStorage("user", JSON.stringify(userInfo));
+      setLocalStorage("token", "dummy_token"); // Replace with actual token from login response
+      setLocalStorage("user", JSON.stringify(userInfo));
       window.location.href = "/home";
     } catch (err: any) {
       console.log("Login error:", err?.error);

@@ -1,8 +1,8 @@
-import { clearSessionsStorage } from "../../services/storage";
+import { clearLocalStorage } from "../../services/storage";
 
 export function Logout() {
   // Remove items from sessionStorage
   // sessionStorage.removeItem("i18nextLng");
-  clearSessionsStorage();
+  clearLocalStorage();
   return (window.location.href = "/auth/login");
 }

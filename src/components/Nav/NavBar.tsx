@@ -8,7 +8,7 @@ import { MdLogout } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import type { UserInfo } from "../../core/model/user.config";
 import { Logout } from "../../core/utils/auth";
-import { getSessionsStorage } from "../../services/storage";
+import { getLocalStorage} from "../../services/storage";
 
 interface NavItemProps {
   to: string;
@@ -44,7 +44,7 @@ export default function Nav() {
   const [activeButton, setActiveButton] = useState<string>("");
 
   const userInfo = JSON.parse(
-    getSessionsStorage("user") || "null"
+    getLocalStorage("user") || "null"
   ) as UserInfo | null;
 
   const handleNavClick = (path: string) => {

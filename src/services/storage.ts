@@ -1,23 +1,23 @@
-export const getSessionsStorage = (key: string): string | null => {
+export const getLocalStorage = (key: string): string | null => {
   try {
-    return sessionStorage.getItem(key);
+    return localStorage.getItem(key);
   } catch (error) {
     console.error(error);
     return null;
   }
 };
 
-export const setSessionsStorage = (key: string, data: string): void => {
+export const setLocalStorage = (key: string, data: string): void => {
   try {
-    sessionStorage.setItem(key, data);
+    localStorage.setItem(key, data);
   } catch (error) {
     console.error(error);
   }
 };
 
-export const clearSessionsStorage = (): void => {
+export const clearLocalStorage = (): void => {
   try {
-    sessionStorage.clear();
+    localStorage.clear();
   } catch (error) {
     console.error(error);
   }

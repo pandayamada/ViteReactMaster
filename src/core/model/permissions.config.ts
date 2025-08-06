@@ -1,9 +1,9 @@
 
 
-import { getSessionsStorage } from "../../services/storage";
+import { getLocalStorage} from "../../services/storage";
 import type { UserInfo } from "./user.config";
 
-const userInfo = JSON.parse(getSessionsStorage("user") || "null") as UserInfo | null;
+const userInfo = JSON.parse(getLocalStorage("user") || "null") as UserInfo | null;
 
 
 export const systemsRole = {

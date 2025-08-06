@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import Nav from "../components/Nav/NavBar";
-import { clearSessionsStorage, getSessionsStorage } from "../services/storage";
+import { clearLocalStorage, getLocalStorage} from "../services/storage";
 
 // import { getServiceAll } from "../services/gateways";
 import type { UserInfo } from "../core/model/user.config";
@@ -15,13 +15,13 @@ const AuthGuard = ({
   isCustomFullPage = false,
 }: AuthGuardProps) => {
   const navigate = useNavigate();
-  const token = getSessionsStorage("token");
+  const token = getLocalStorage("token");
   const userInfo = JSON.parse(
-    getSessionsStorage("user") || "null"
+    getLocalStorage("user") || "null"
   ) as UserInfo | null;
 
   const logout = useCallback(() => {
-    clearSessionsStorage();
+    clearLocalStorage();
     void navigate("/auth/login", { replace: true });
   }, [navigate]);
 

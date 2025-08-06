@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import AuthGuard from "./layout/AuthenGard";
 import UnAuthen from "./layout/UnAuthGuard";
-import { getSessionsStorage } from "./services/storage.js";
+import { getLocalStorage} from "./services/storage.js";
 import { permissionAction } from "./core/model/permissions.config";
 
 import Login from "./views/auth/Login";
@@ -11,7 +11,7 @@ import Contract from "./views/module/Contract.js";
 const routes = createBrowserRouter([
   {
     path: "*",
-    element: getSessionsStorage("token") ? (
+    element: getLocalStorage("token") ? (
       <Navigate to="/home" />
     ) : (
       <Navigate to="/auth/login" />
