@@ -3,9 +3,9 @@ import axios from "axios";
 import type { AxiosRequestConfig } from "axios";
 
 import { getSessionsStorage, setSessionsStorage } from "./storage";
-import { Logout } from "../core/util/logout";
+import { Logout } from "../core/utils/auth";
 
-const apiBaseURL: string = import.meta.env.VITE_APP_API_URL;
+const apiBaseURL: string = import.meta.env.VITE_APP_API_URL as string;
 
 const authVerify = async (config: AxiosRequestConfig): Promise<AxiosRequestConfig> => {
   const token = getSessionsStorage("token");
@@ -24,7 +24,7 @@ const authVerify = async (config: AxiosRequestConfig): Promise<AxiosRequestConfi
       } catch (error) {
         console.error("Token refresh failed", error);
         Logout();
-        return Promise.reject(error);
+        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
       }
     } else {
       config.headers = { ...config.headers, Authorization: token };
