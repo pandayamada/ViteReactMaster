@@ -65,7 +65,11 @@ export default function Nav() {
       >
         {/* Device: Mobile & Tablet */}
         <div className="dropdown lg:hidden max-w-[160px] flex-1">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle bg-base-100 text-base-content"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -84,7 +88,7 @@ export default function Nav() {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-neutral rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             {permissionAction.Home && (
               <NavItem
@@ -141,7 +145,7 @@ export default function Nav() {
             >
               <div className="dropdown z-0 h-max w-max rounded-3xl p-0 a ">
                 <div tabIndex={0} role="button">
-                  <AiOutlineSetting className="inline-block p-2 h-10 w-10 z-0 rounded-3xl" />
+                  <AiOutlineSetting className="inline-block p-2 h-10 w-10 z-0 rounded-3xl bg-base-100 text-base-content" />
                 </div>
                 <div
                   tabIndex={0}
