@@ -6,7 +6,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { setLocalStorage } from "../../services/storage";
 import type { UserInfo } from "../../core/model/user.config";
 
-export default function LoginNew() {
+export default function Login() {
   const [user, setUser] = useState<{ username: string; password: string }>({
     username: "admin@sss.com",
     password: "admin",
