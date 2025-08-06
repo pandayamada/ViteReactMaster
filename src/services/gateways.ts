@@ -1,4 +1,3 @@
-// services/gateways.ts
 import axios, {
   type AxiosError,
   type AxiosInstance,
