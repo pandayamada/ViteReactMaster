@@ -25,10 +25,10 @@ export default function LoginNew() {
       //demo
       const userInfo: UserInfo = {
         id: "1",
-        email: "demo1@sss.com",
+        email: user.username,
         role: "admin",
-        first_name: "Demo",
-        last_name: "User",
+        first_name: "User",
+        last_name: user.username,
       };
       setSessionsStorage("token", "dummy_token"); // Replace with actual token from login response
       setSessionsStorage("user", JSON.stringify(userInfo));
