@@ -7,9 +7,7 @@ import axios, {
 } from "axios";
 import authVerify from "./authverify";
 
-const apiBaseURL = import.meta.env.VITE_APP_API_URL as string;
-const apiJobAndAsset = import.meta.env
-  .VITE_APP_API_BASE_URL_JOBASSET as string;
+const apiBaseURL = import.meta.env.VITE_API_URL as string;
 
 const instance: AxiosInstance = axios.create({
   baseURL: apiBaseURL,

@@ -5,7 +5,7 @@ import type { AxiosRequestConfig } from "axios";
 import { getLocalStorage, setLocalStorage } from "./storage";
 import { Logout } from "../core/utils/auth";
 
-const apiBaseURL: string = import.meta.env.VITE_APP_API_URL as string;
+const apiBaseURL: string = import.meta.env.VITE_LOGIN_PATH as string;
 
 const authVerify = async (config: AxiosRequestConfig): Promise<AxiosRequestConfig> => {
   const token = getLocalStorage("token");
